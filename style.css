@@ -6,8 +6,8 @@ body {
 
 main {
   display: flex;
-  justify-content: center;
-  border-radius: 5px;
+  align-items: center;
+  flex-direction: column;
 }
 
 /* top player style  */
@@ -32,6 +32,8 @@ main {
 .container {
   background-color: #ffffff;
   width: 870px;
+  border-radius: 5px;
+  margin-top: 21px;
 }
 
 .player {
@@ -91,4 +93,91 @@ hr {
   text-decoration: none;
   font-size: 16px;
   color: #562eff;
+}
+
+/* latest course style */
+
+.courses {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 24px;
+}
+
+.course {
+  padding: 16px;
+}
+
+.course .course-banner img {
+  width: 224px;
+  height: 104px;
+}
+
+.course-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fa-star.filled {
+  color: #ffc014;
+}
+
+.fa-star.empty {
+  color: #aeaeae;
+}
+
+.course-author {
+  color: #ed6b4f;
+  font-size: 15px;
+}
+
+#react-course {
+  background-color: #ffe4e8;
+  color: #ff4a60;
+  border-radius: 20px;
+  padding: 5px;
+}
+#powerpoint-course {
+  background-color: #fee5df;
+  color: #ed6b4f;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+#js-course {
+  background-color: #ffe4e8;
+  color: #ff4a60;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+/* media quaries */
+
+/* for mobile devies */
+
+@media only screen and (max-width: 688px) {
+  .container {
+    width: 100%;
+  }
+  .players,
+  .blogs,
+  .courses {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .player,
+  .blog,
+  .course {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (min-width: 688px) and (max-width: 992px) {
+  .container {
+    width: 100%;
+  }
+  .players,
+  .blogs,
+  .courses {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
